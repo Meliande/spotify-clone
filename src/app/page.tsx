@@ -1,9 +1,8 @@
-import { Home as HomeIcon, Search, Library, ChevronLeft, ChevronRight, ChevronDown, Play, Shuffle, SkipBack, SkipForward, Repeat, Mic2, ListMusic, MonitorSpeaker, Volume, Maximize} from "lucide-react"
+import { Home as ChevronLeft, ChevronRight, ChevronDown, Play } from "lucide-react"
 import Image from "next/image"
 import { Footer } from "./components/Footer"
 import { Sidebar } from "./components/Sidebar"
 
-const Playlists = ["Rock","Sertanejo","MPB","TopBrasil","TopSertanejo"]
 const Albums = [
   {
     "Name" : "Dark Side of The Moon",
@@ -40,30 +39,33 @@ const Albums = [
     "Date" : "03/01/1973",
     "Artist" : "Pink Floyd",
     "Cover" : "/public/DSM.png"
-  }
-]
+  }]
 const Mix = [
   {
+    "id":1,
     "Name" : "Mix 1",
     "Description" : "Teste"
   },
   {
+    "id":2,
     "Name" : "Mix 2",
     "Description" : "Teste"
   },
   {
+    "id":3,
     "Name" : "Mix 3",
     "Description" : "Teste"
   },
   {
+    "id":4,
     "Name" : "Mix 4",
     "Description" : "Teste"
   },
   {
+    "id":5,
     "Name" : "Mix 5",
     "Description" : "Teste"
-  },
-]
+  }]
 
 export default function Home() {
   return (
@@ -90,7 +92,7 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-4 mt-4">
               {
                 Albums.map((album) => (
-                  <a href="" className="bg-white/5 group rounded flex items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors">
+                  <a key="name" href="" className="bg-white/5 group rounded flex items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors">
                     <Image src="/DSM.png" alt="" width={104} height={104}></Image>
                     <strong>{album.Name}</strong>
                     <button className="w-12 h-12 flex items-center justify-center pl-1 bg-green-400 rounded-full text-black ml-auto mr-8 invisible group-hover:visible">
@@ -104,7 +106,7 @@ export default function Home() {
           <div className="grid grid-cols-8 gap-4 mt-4">
               {
                 Mix.map((mix) => (
-                  <a href="" className="bg-white/5 p-3 rounded-md flex flex-col gap-2 hover:bg-white/10">
+                  <a key="id" href="" className="bg-white/5 p-3 rounded-md flex flex-col gap-2 hover:bg-white/10">
                     <Image className="w-full" src="/DSM.png" width={120} height={120} alt=""></Image>
                     <strong className="font-semibold ">{mix.Name}</strong>
                     <span className="text-sm text-zinc-500">{mix.Description}</span>
