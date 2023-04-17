@@ -2,70 +2,112 @@ import { ChevronLeft, ChevronRight, ChevronDown, Play } from "lucide-react"
 import Image from "next/image"
 import { Footer } from "./components/Footer"
 import { Sidebar } from "./components/Sidebar"
+import justOneNight from "/public/justOneNight.jpg"
+import aceOfSpades from "public/aceOfSpades.jpg"
+import animals from "/public/animals.jpg"
+import album2 from "/public/album2.jpg"
+import load from "/public/load.jpg"
+import DSM from "/public/DSM.png"
 
 const Albums = [
   {
-    "Name" : "Dark Side of The Moon",
+    "Name" : "Just one Night",
     "Date" : "03/01/1973",
-    "Artist" : "Pink Floyd",
-    "Cover" : "/public/DSM.png"
+    "Artist" : "Eric Clapton",
+    "Cover" : justOneNight
   },
   {
     "Name" : "Dark Side of The Moon",
     "Date" : "03/01/1973",
     "Artist" : "Pink Floyd",
-    "Cover" : "/public/DSM.png"
+    "Cover" : DSM
   },
   {
-    "Name" : "Dark Side of The Moon",
+    "Name" : "Ace of Spades",
     "Date" : "03/01/1973",
-    "Artist" : "Pink Floyd",
-    "Cover" : "/public/DSM.png"
+    "Artist" : "Motorhead",
+    "Cover" : aceOfSpades
   },
   {
-    "Name" : "Dark Side of The Moon",
+    "Name" : "Wasting Light",
     "Date" : "03/01/1973",
-    "Artist" : "Pink Floyd",
-    "Cover" : "/public/DSM.png"
+    "Artist" : "Foo Fighters",
+    "Cover" : album2
   },
   {
-    "Name" : "Dark Side of The Moon",
+    "Name" : "Animals",
     "Date" : "03/01/1973",
     "Artist" : "Pink Floyd",
-    "Cover" : "/public/DSM.png"
+    "Cover" : animals
   },
   {
-    "Name" : "Dark Side of The Moon",
+    "Name" : "Load",
     "Date" : "03/01/1973",
-    "Artist" : "Pink Floyd",
-    "Cover" : "/public/DSM.png"
+    "Artist" : "Metallica",
+    "Cover" : load
   }]
 const Mix = [
   {
     "id":1,
     "Name" : "Mix 1",
-    "Description" : "Teste"
+    "Description" : "Teste",
+    "Cover" : ""
   },
   {
     "id":2,
     "Name" : "Mix 2",
-    "Description" : "Teste"
+    "Description" : "Teste",
+    "Cover" : ""
   },
   {
     "id":3,
     "Name" : "Mix 3",
-    "Description" : "Teste"
+    "Description" : "Teste",
+    "Cover" : ""
   },
   {
     "id":4,
     "Name" : "Mix 4",
-    "Description" : "Teste"
+    "Description" : "Teste",
+    "Cover" : ""
   },
   {
     "id":5,
     "Name" : "Mix 5",
-    "Description" : "Teste"
-  }]
+    "Description" : "Teste",
+    "Cover" : "",
+  },
+  {
+    "id":6,
+    "Name" : "Mix 6",
+    "Description" : "Teste",
+    "Cover" : "",
+  },
+  {
+    "id":7,
+    "Name" : "Mix 7",
+    "Description" : "Teste",
+    "Cover" : "",
+  },
+  {
+    "id":8,
+    "Name" : "Mix 8",
+    "Description" : "Teste",
+    "Cover" : "",
+  },
+  {
+    "id":9,
+    "Name" : "Mix 9",
+    "Description" : "Teste",
+    "Cover" : "",
+  },
+  {
+    "id":10,
+    "Name" : "Mix 10",
+    "Description" : "Teste",
+    "Cover" : "",
+  },
+]
 
 export default function Home() {
   return (
@@ -89,11 +131,11 @@ export default function Home() {
 
           <h1 className="font-semibold text-4xl mt-10">Good Afternoon</h1>
 
-          <div className="grid grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-1 gap-4 mt-4 overflow-scroll md:grid-cols-3 xl:grid-cols-4">
               {
                 Albums.map((album) => (
-                  <a key="name" href="" className="bg-white/5 group rounded flex items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors">
-                    <Image src="/DSM.png" alt="" width={104} height={104}></Image>
+                  <a key="name" href="" className="bg-white/5 group rounded flex align-middle items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors">
+                    <Image src={album.Cover} alt="" width={104} height={104}></Image>
                     <strong>{album.Name}</strong>
                     <button className="w-12 h-12 flex items-center justify-center pl-1 bg-green-400 rounded-full text-black ml-auto mr-8 invisible group-hover:visible">
                       <Play/>
