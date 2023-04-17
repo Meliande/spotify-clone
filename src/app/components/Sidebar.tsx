@@ -9,7 +9,7 @@ export function Sidebar() {
           <nav className="space-y-5 text-sm font-semibold text-zinc-200">
             {
               Menu.map((menu) => (
-                <a href="" className="flex items-center gap-3 hover:text-white">
+                <a key="menu" href="" className="flex items-center gap-3 hover:text-white">
                   {menu}
                 </a>
               ))
